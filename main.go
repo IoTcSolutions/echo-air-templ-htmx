@@ -12,7 +12,7 @@ import (
 func main() {
 	component := views.Main()
 
-	http.Handle("/login", templ.Handler(component))
+	http.Handle("/", templ.Handler(component))
 
 	http.Handle("/login", http.HandlerFunc(login))
 
@@ -21,7 +21,7 @@ func main() {
 }
 
 func login(w http.ResponseWriter, r *http.Request) {
-	component := pages.NewPage()
-	fmt.Println(r.Body)
+	email := r.FormValue("email")
+	component := pages.NewPage(email)
 	component.Render(context.Background(), w)
 }
