@@ -1,0 +1,51 @@
+package components
+
+script lineChart(data []int, chartType string) {
+        var random = `linechart-${Math.floor(Math.random() * 100)}`
+        var ch = document.getElementById("chart")
+        ch.id = random
+
+        var options = {
+          series: [{
+            name: "Desktops",
+            data: data
+        }],
+          chart: {
+          height: 350,
+          type: chartType,
+          zoom: {
+            enabled: false
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'straight'
+        },
+        title: {
+          text: 'Product Trends by Month',
+          align: 'left'
+        },
+        grid: {
+          row: {
+            colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+            opacity: 0.5
+          },
+        },
+        xaxis: {
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#" + random), options);
+        chart.render();
+}
+
+templ ApexLineChart(data []int, chartType string) {
+<script defer type="module">
+</script>
+<div id="chart">
+@lineChart(data, chartType)
+</div>
+}

@@ -1,0 +1,44 @@
+package components
+
+script barChart() {
+
+        var random = `barchart-${Math.floor(Math.random() * 100)}`
+        var ch = document.getElementById("barChart")
+        ch.id = random
+
+        var options = {
+          series: [{
+          data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380]
+        }],
+          chart: {
+          type: 'bar',
+          height: 400,
+        },
+        plotOptions: {
+          bar: {
+            borderRadius: 4,
+            horizontal: true,
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        xaxis: {
+          categories: ['South Korea', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan',
+            'United States', 'China', 'Germany'
+          ],
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#" + random), options);
+        chart.render();
+
+}
+
+templ ApexBarChart() {
+<script defer type="module">
+</script>
+<div id="barChart">
+@barChart()
+</div>
+}

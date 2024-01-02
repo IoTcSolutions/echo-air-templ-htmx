@@ -1,0 +1,40 @@
+package pages
+
+
+templ Index() {
+        <!DOCTYPE html>
+        <html class="h-full bg-slate-600">
+        <head>
+            <title>Product 1 - Innovative Solution</title>
+            <link rel="stylesheet" href="/static/css/output.css"/>
+            <script defer src="/static/js/alpine_intersect.js"></script>
+            <script defer src="/static/js/alpine_focus.js"></script>
+            <script defer src="/static/js/alpine_collapse.js"></script>
+            <script defer src="/static/js/alpine.js"></script>
+            <script src="/static/js/apexcharts.js"></script>
+            <script src="/static/js/htmx.js"></script>
+
+            <script src="https://unpkg.com/@popperjs/core@2"></script>
+            <script src="https://unpkg.com/tippy.js@6"></script>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+            <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css" />
+            <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+        </head>
+        <body>
+            <div id="mainPage">
+                {children...}
+            </div>
+        </body>
+        </html>
+}

@@ -1,5 +1,31 @@
 package pages
 
-templ NewPage(email string) {
-    <div>Hello {email}</div>
+import "insights/eath/v2/views/components"
+// import layout "insights/eath/v2/views/components/layout"
+
+
+templ NewPage(email string, values []int, chartType string) {
+            <div class="columns-2">
+            <div>Hello {email}</div>
+            <div x-data="{ count: 0 }">
+                <button x-on:click="count++" class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg"z>Increment</button>
+                <span x-text="count"></span>
+            </div>
+            </div>
+            @components.DropDown()
+            @components.Modal()
+            @components.Accordion()
+            @components.Carousel()
+            @components.Tabs()
+            @components.Notification()
+            @components.Radio()
+            @components.Toggle()
+            @components.Tooltip()
+            @components.DateRangePicker()
+            <div class="columns-2 pt-4">
+                @components.ChartJS(values)
+                @components.ApexCharts()
+            </div>
+            @components.FlatPickr()
+            @components.FullCalendar()
 }

@@ -1,0 +1,41 @@
+package components
+
+script pieChart() {
+
+        var random = `piechart-${Math.floor(Math.random() * 100)}`
+        var ch = document.getElementById("pieChart")
+        ch.id = random
+
+        var options = {
+          series: [44, 55, 13, 43, 22],
+          chart: {
+            width: 380,
+            type: 'pie',
+            height: 800
+        },
+        labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }]
+        };
+
+        var chart = new ApexCharts(document.querySelector("#" + random), options);
+        chart.render();
+
+}
+
+templ ApexPieChart() {
+<script defer type="module">
+</script>
+<div id="pieChart">
+@pieChart()
+</div>
+}

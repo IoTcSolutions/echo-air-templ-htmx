@@ -1,7 +1,13 @@
 package pages
 
-templ LoginPage() {
-<div>
-{ children...}
-</div>
+import "insights/eath/v2/views/components"
+
+
+
+templ Login() {
+        @Index() {
+        <div class="bg-slate-600 h-full">
+                @components.LoginForm()
+        </div>
+        }
 }
